@@ -1,5 +1,6 @@
 package com.example.facedetectionandroid
 
+import android.content.Intent
 import android.graphics.*
 import android.graphics.drawable.BitmapDrawable
 import androidx.appcompat.app.AppCompatActivity
@@ -64,6 +65,12 @@ class MainActivity : AppCompatActivity() {
             imageView.setImageDrawable(BitmapDrawable(resources, tempBitmap))
         }
 
+        backBtn.setOnClickListener {
+
+            val intent = Intent(this@MainActivity, CameraActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            startActivity(intent)
+        }
 
     }
 }
